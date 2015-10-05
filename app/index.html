@@ -40,14 +40,14 @@
                             <a ng-click="tab.setTab(3)" href>Reviews</a>
                         </li>
                     </ul>
-                    <div ng-show="tab.isSet(1)">
-                        <h4>Description</h4>
-                        <blockquote>{{ product.description }}</blockquote>
-                    </div>
+                    
+                    <product-description ng-show="tab.isSet(1)"></product-description>
+                    
                     <div ng-show="tab.isSet(2)">
                         <h4>Specs</h4>
                         <blockquote>Shine: {{ product.shine }}</blockquote>
                     </div>
+                    
                     <div ng-show="tab.isSet(3)">
                         <ul>
                             <h4>Reviews</h4>
