@@ -13,18 +13,6 @@
         this.products = gems; 
     });
     
-    app.controller('TabController', function() {
-        this.tab = 1;
-            
-        this.setTab = function(tab) {
-            this.tab = tab;
-        };
-            
-        this.isSet = function(selectedTab) {
-            return this.tab === selectedTab;
-        };
-    });
-    
     app.controller('ReviewController', function() {
         this.review = {};
         
@@ -53,6 +41,25 @@
         return {
             restrict: 'E',
             templateUrl: 'views/product-reviews.html'
+        };
+    });
+    
+    app.directive('productTabs', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'views/product-tabs.html',
+            controller: function() {
+                this.tab = 1;
+                    
+                this.setTab = function(tab) {
+                    this.tab = tab;
+                };
+                    
+                this.isSet = function(selectedTab) {
+                    return this.tab === selectedTab;
+                };
+            },
+            controllerAs: 'tab'
         };
     });
     
