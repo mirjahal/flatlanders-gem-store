@@ -1,14 +1,6 @@
 (function() {
     var app = angular.module('gemStore', []);
 
-    app.controller('GalleryController', function() {
-        this.current = 0;
-            
-        this.setCurrent = function(current) {
-            this.current = (!current) ? 0 : current;
-        };
-    });
-
     app.controller('StoreController', function() {
         this.products = gems; 
     });
@@ -60,6 +52,21 @@
                 };
             },
             controllerAs: 'tab'
+        };
+    });
+    
+    app.directive('productGallery', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'views/product-gallery.html',
+            controller: function() {
+                this.current = 0;
+                    
+                this.setCurrent = function(current) {
+                    this.current = (!current) ? 0 : current;
+                };
+            },
+            controllerAs: 'gallery'
         };
     });
     
